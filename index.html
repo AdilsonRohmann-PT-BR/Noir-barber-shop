@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>NOIR — Barber Studio</title>
+  <meta name="description" content="NOIR Barber Studio: barbearia fictícia criada como projeto de portfólio.">
+  <meta name="theme-color" content="#0C0C0C">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=Manrope:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <a class="skip" href="#conteudo">Ir para o conteúdo</a>
+
+  <header class="header" id="header">
+    <a class="logo" href="#topo" aria-label="NOIR Barber Studio, início">
+      <span class="logo-nome">NOIR</span><span class="logo-sub">Barber Studio</span>
+    </a>
+    <button class="menu-btn" id="menu-btn" aria-expanded="false" aria-controls="menu" aria-label="Abrir menu">
+      <span></span><span></span>
+    </button>
+    <nav class="menu" id="menu" aria-label="Principal">
+      <a href="#servicos">Serviços</a>
+      <a href="#galeria">Galeria</a>
+      <a href="#agendamento">Agendamento</a>
+      <a href="#localizacao">Localização</a>
+      <a class="btn btn-bronze btn-sm" href="#agendamento">Agendar</a>
+    </nav>
+  </header>
+
+  <main id="conteudo">
+    <section class="hero" id="topo">
+      <div class="hero-texto">
+        <p class="etiqueta">NOIR / Barber Studio</p>
+        <h1>Seu estilo.<br><em>Sem excessos.</em></h1>
+        <p class="hero-lead">Cuidado pessoal, técnica e atenção aos detalhes.</p>
+        <div class="acoes">
+          <a class="btn btn-bronze" href="#agendamento">Agendar horário</a>
+          <a class="btn btn-linha" href="#servicos">Explorar serviços</a>
+        </div>
+      </div>
+      <figure class="hero-foto">
+        <img src="hero-noir.jpg" alt="Barbeiro finalizando um corte em luz baixa, em um estúdio de madeira escura e metal" width="1200" height="1500" fetchpriority="high">
+      </figure>
+      <p class="hero-marca" aria-hidden="true">Est. Concept</p>
+      <a class="rolagem" href="#servicos" aria-label="Rolar para os serviços"><span>Rolar</span><i></i></a>
+    </section>
+
+    <section class="secao" id="servicos" aria-labelledby="t-servicos">
+      <div class="secao-topo">
+        <h2 id="t-servicos">Serviços,<br>sem complicação.</h2>
+        <p>Escolha o serviço e encontre um horário.</p>
+      </div>
+      <ul class="servicos" id="lista-servicos"></ul>
+      <p class="nota">Preços e durações demonstrativos.</p>
+    </section>
+
+    <section class="secao" id="galeria" aria-labelledby="t-galeria">
+      <div class="secao-topo">
+        <h2 id="t-galeria">Uma questão<br>de detalhe.</h2>
+        <div class="filtros" role="group" aria-label="Filtrar galeria">
+          <button type="button" class="filtro" data-filtro="todos" aria-pressed="true">Tudo</button>
+          <button type="button" class="filtro" data-filtro="cortes" aria-pressed="false">Cortes</button>
+          <button type="button" class="filtro" data-filtro="detalhes" aria-pressed="false">Detalhes</button>
+          <button type="button" class="filtro" data-filtro="ambiente" aria-pressed="false">Ambiente</button>
+        </div>
+      </div>
+      <div class="galeria">
+        <button type="button" class="foto foto-a" data-cat="cortes" data-full="corte-degrade.jpg" data-alt="Degradê limpo na lateral da cabeça, em close">
+          <img src="corte-degrade.jpg" alt="Degradê limpo na lateral da cabeça, em close" width="1000" height="1250" loading="lazy">
+        </button>
+        <button type="button" class="foto foto-b" data-cat="detalhes" data-full="ferramentas-noir.jpg" data-alt="Tesoura, pente e navalha sobre couro escuro">
+          <img src="ferramentas-noir.jpg" alt="Tesoura, pente e navalha sobre couro escuro" width="1000" height="750" loading="lazy">
+        </button>
+        <button type="button" class="foto foto-c" data-cat="cortes" data-full="corte-classico.jpg" data-alt="Corte clássico com risca lateral, visto de perfil">
+          <img src="corte-classico.jpg" alt="Corte clássico com risca lateral, visto de perfil" width="800" height="1000" loading="lazy">
+        </button>
+        <button type="button" class="foto foto-d" data-cat="detalhes" data-full="detalhe-barba.jpg" data-alt="Barba aparada com acabamento preciso">
+          <img src="detalhe-barba.jpg" alt="Barba aparada com acabamento preciso" width="1000" height="1000" loading="lazy">
+        </button>
+        <button type="button" class="foto foto-e" data-cat="ambiente" data-full="ambiente-noir.jpg" data-alt="Cadeira de barbeiro, espelho e parede de madeira">
+          <img src="ambiente-noir.jpg" alt="Cadeira de barbeiro, espelho e parede de madeira" width="1400" height="900" loading="lazy">
+        </button>
+      </div>
+    </section>
+
+    <section class="secao" id="agendamento" aria-labelledby="t-agenda">
+      <div class="secao-topo">
+        <h2 id="t-agenda">Agende<br>do seu jeito.</h2>
+        <p>Peça pelo site ou continue a conversa no WhatsApp.</p>
+      </div>
+      <div class="agenda">
+        <form class="form" id="form-agenda" novalidate>
+          <h3>Solicitar pelo site</h3>
+          <div class="campo">
+            <label for="servico">Serviço</label>
+            <select id="servico" name="servico" required></select>
+            <p class="erro" id="erro-servico" role="alert"></p>
+          </div>
+          <div class="campo">
+            <label for="data">Data</label>
+            <input type="date" id="data" name="data" required>
+            <p class="erro" id="erro-data" role="alert"></p>
+          </div>
+          <fieldset class="campo" id="horarios">
+            <legend>Horário <small>(exemplos ilustrativos)</small></legend>
+            <div class="slots" id="slots"></div>
+            <p class="erro" id="erro-horario" role="alert"></p>
+          </fieldset>
+          <div class="campo">
+            <label for="nome">Nome</label>
+            <input type="text" id="nome" name="nome" autocomplete="given-name" required>
+            <p class="erro" id="erro-nome" role="alert"></p>
+          </div>
+          <button class="btn btn-bronze" type="submit">Continuar</button>
+          <div class="resumo" id="resumo" tabindex="-1" hidden></div>
+        </form>
+
+        <aside class="whats">
+          <h3>Prefere conversar?</h3>
+          <p>Abrimos o WhatsApp com a mensagem pronta. Você revisa e envia por lá; nada é enviado automaticamente.</p>
+          <button class="btn btn-linha" type="button" id="btn-whats">Agendar pelo WhatsApp</button>
+          <p class="aviso" id="aviso-whats" role="status"></p>
+          <p class="nota">Este site é uma demonstração e não registra reservas nem guarda dados pessoais.</p>
+        </aside>
+      </div>
+    </section>
+
+    <section class="secao" id="localizacao" aria-labelledby="t-local">
+      <div class="secao-topo">
+        <h2 id="t-local">Onde<br>nos encontrar.</h2>
+        <p>Dados demonstrativos.</p>
+      </div>
+      <dl class="info">
+        <div><dt>Endereço</dt><dd>Rua Exemplo, 123 — Centro<br>Cidade Fictícia, UF</dd></div>
+        <div><dt>Horários</dt><dd>Ter a sex: 10h às 20h<br>Sáb: 9h às 18h<br>Dom e seg: fechado</dd></div>
+        <div><dt>Contato</dt><dd>(00) 0000-0000<br>contato@exemplo.com</dd></div>
+      </dl>
+      <div class="acoes">
+        <a class="btn btn-linha" id="btn-mapa" href="#localizacao" target="_blank" rel="noopener">Abrir no mapa</a>
+        <a class="btn btn-bronze" href="#agendamento">Agendar</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <a class="logo" href="#topo"><span class="logo-nome">NOIR</span><span class="logo-sub">Barber Studio</span></a>
+    <nav aria-label="Rodapé">
+      <a href="#servicos">Serviços</a>
+      <a href="#galeria">Galeria</a>
+      <a href="#agendamento">Agendamento</a>
+      <a href="#localizacao">Localização</a>
+    </nav>
+    <p>Projeto conceitual fictício. Direitos Autorais Reservados. © <span id="ano">2026</span> NOIR.</p>
+  </footer>
+
+  <dialog class="modal" id="modal" aria-label="Foto ampliada">
+    <button type="button" class="modal-fechar" id="modal-fechar" aria-label="Fechar">Fechar</button>
+    <img id="modal-img" src="" alt="">
+  </dialog>
+</body>
+</html>
