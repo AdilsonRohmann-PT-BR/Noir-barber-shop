@@ -782,3 +782,13 @@ input[type="text"] {
   .galeria > img:nth-child(4) { grid-column: 6 / 7; grid-row: 2 / 4; }
   .galeria > img:nth-child(5) { grid-column: 1 / 7; grid-row: 4 / 6; }
 }
+
+/* Hero: sem texto sobre a foto entre 960px e 1279px */
+@media (min-width: 960px) and (max-width: 1279px) {
+  .hero-foto { grid-column: 7 / 13; }
+  .hero-texto { grid-column: 1 / 7; padding-right: 1.5rem; }
+  .hero h1 {
+    font-size: clamp(3.4rem, 6.8vw, 5.5rem);
+    text-shadow: none;
+  }
+}
