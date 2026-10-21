@@ -783,12 +783,21 @@ input[type="text"] {
   .galeria > img:nth-child(5) { grid-column: 1 / 7; grid-row: 4 / 6; }
 }
 
-/* Hero: sem texto sobre a foto entre 960px e 1279px */
-@media (min-width: 960px) and (max-width: 1279px) {
-  .hero-foto { grid-column: 7 / 13; }
-  .hero-texto { grid-column: 1 / 7; padding-right: 1.5rem; }
+/* Hero: texto e foto lado a lado, sem sobreposição */
+@media (min-width: 960px) {
+  .hero-foto {
+    grid-column: 7 / 13;
+  }
+  .hero-texto {
+    grid-column: 1 / 7;
+    min-width: 0;
+    padding: 8rem 2rem 4rem var(--pad);
+  }
   .hero h1 {
-    font-size: clamp(3.4rem, 6.8vw, 5.5rem);
+    font-size: clamp(3.4rem, 7.5vw, 8rem);
     text-shadow: none;
+  }
+  .hero-lead {
+    max-width: 34ch;
   }
 }
